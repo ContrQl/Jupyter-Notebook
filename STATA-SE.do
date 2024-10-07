@@ -82,7 +82,8 @@ correlate VARIABLE1 VARIABLE2 VARIABLE3 [aweight=VARIABLE4], covariance // where
 // Graphing Data, with an eye toward modelling
 
 // Histogram with number of bins specified, with a specific start bin, and checked for normality
-hist VARIABLE, bin(n), start(VALUE) normal
+// By default y-axis is density; Switch to frequency by appending "freq" as an argument
+hist VARIABLE, bin(n), start(VALUE) normal freq
 
 // Scatter Plot
 twoway (scatter VARIABLE1 VARIABLE2) // where VARIABLE1 is plotted on the y-axis and VARIABLE2 is plotted on the x-axis
