@@ -81,7 +81,7 @@ correlate VARIABLE1 VARIABLE2 VARIABLE3 [aweight=VARIABLE4], covariance // where
 
 // Graphing Data, with an eye toward modelling
 
-// Histogram with number of bins specified, with a specific start bin, and checked for normality
+// Histogram with number of bins specified (14 bins by default), with a specific start bin, and checked for normality
 // By default y-axis is density; Switch to frequency by appending "freq" as an argument
 hist VARIABLE, bin(n), start(VALUE) normal freq
 
