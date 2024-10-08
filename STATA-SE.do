@@ -28,7 +28,7 @@ notes
 // Show variable name and variable label, and some summary statistics
 // Shows if all values are unique, contains blanks, are missing any values (value = "., .a -.z"). If values are unique variable can possibly be used as an identifier
 // If VARIABLE is an indicator VARIABLE, this function will reveal the key-value pairs. Indicator variables use less memory and can be worked into statistical models
-codeblock VARIABLE
+codebook VARIABLE
 
 // Creating new variables
 gen VARIABLE2 = VARIABLE1 * arbitrary transformation
