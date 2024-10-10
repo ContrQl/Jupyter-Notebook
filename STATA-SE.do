@@ -94,7 +94,7 @@ twoway (scatter VARIABLE1 VARIABLE2), by(VARIABLE3, total) // generating graphs 
 twoway (scatter VARIABLE1 VARIABLE2) (line VARIABLEhat VARIABLE2, sort), by(foreign) // Overlaying a predicted line (sorted by x-variable) over the scatter plot
 
 // Box Plot
-// Edges of box represent 25 and 75th perecentiles; Whiskers of box plot represent the smallest and lowest values within the inner fence; Data beyond whiskers are in the outer fence and beyond and are considered outliers
+// Edges of box represent 25 and 75th perecentiles; Whiskers of box plot represent the smallest and lowest values within the inner fence; Data beyond whiskers are in the outer fence and are considered outliers
 graph box VARIABLE
 
 // To keep track of work, use the log button (lab notebook icon) to begin a log
