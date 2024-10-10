@@ -34,6 +34,9 @@ codebook VARIABLE
 gen VARIABLE2 = VARIABLE1 * arbitrary transformation
 label variable VARIABLE2 "arbitrary description here"
 
+// Compute numbers
+display VARIABLE * arbitrary calculation
+
 // Descriptive Statistics
 
 // Summarise VARIABLE in detail (VARIABLE IS CASE SENSITIVE)
