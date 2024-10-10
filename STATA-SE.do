@@ -35,7 +35,7 @@ gen VARIABLE2 = VARIABLE1 * arbitrary transformation
 label variable VARIABLE2 "arbitrary description here"
 
 // Compute numbers
-display VARIABLE * arbitrary calculation
+disp VARIABLE * arbitrary calculation
 
 // Descriptive Statistics
 
