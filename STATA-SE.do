@@ -30,9 +30,10 @@ notes
 // If VARIABLE is an indicator VARIABLE, this function will reveal the key-value pairs. Indicator variables use less memory and can be worked into statistical models
 codebook VARIABLE
 
-// Creating new variables
+// Creating and deleting new variables
 gen VARIABLE2 = VARIABLE1 * arbitrary transformation
 label variable VARIABLE2 "arbitrary description here"
+drop VARIABLE2
 
 // Compute numbers
 disp VARIABLE * arbitrary calculation
