@@ -45,6 +45,9 @@ disp VARIABLE * arbitrary calculation
 summ VARIRABLE, det
 tabulate VARIABLE2, summ(VARIABLE1) // where groups are separated by VARIABLE1 and summary produced for VARIABLE2
 
+// Produce Mean, SE, and 95% Confidence Interval
+ci means VARIABLE
+
 // Logic and Conditionals
 // STATA works with usual logical operators: ==; !=; >; <; >=; <=; & (AND); | (OR); !(NOT)
 
