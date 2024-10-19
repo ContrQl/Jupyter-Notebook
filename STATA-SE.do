@@ -58,9 +58,23 @@ br if missing(VARIABLE)
 list VARIABLE if > n
 by VARIABLE2, sort: summ VARIABLE1 // where subgroups are separated by VARIABLE1 and summary produced for VARIABLE2
 
+// Power Analysis (Solving for power)
+// Pr(Z > z) > 0.80: Sufficiently powered experiment (TBC); Critical value is such that you can be 95% confident in detecting a difference if there is one; p(1 - β) > 0.80
+// Expected successes in control can be taken from literature; Expected successes from test can either be arbitrary (producing multiple power analyses) or taken from sensitivity studies
+prtesti SAMPLESIZE_TOTAL SUCCESS_PROPORTION_EXPECTED1 SUCCESS_PRPORTION_EXPECTED2
+
+// Power Analysis (Solving for n)
+// Sample size needed to achieve 0.80 power for detecting a difference between two proportions (0.123, 0.8)
+power twoproportions 0.123 0.3, power(0.8) alpha(0.05)
+power twoproportions 0.123 0.3 n(1000) alpha(0.05) // Solves for power
+
 // Hypothesis Test
 
-// Two sample t-test (mean comparison test) with equal variances
+// Two sample z-test for proportions (H0: Proportion1 = Proportion2)
+// Produces proportions of each group, Δproportion, SE, z-statistic, p(observing z-statistic greater than z), 95% CI
+prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are number of succeses in each sample
+
+// Two sample z-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
 // Produces p-values of one-tailed alternative hypothesis in both directions and two-tailed alternative hypothesis. For example, Pr(T < t) is the probability that the t-statistic would be smaller than the Test statistic under the null hypothesis
 ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated by VARIABLE2 are compared
 
