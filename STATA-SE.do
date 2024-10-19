@@ -72,17 +72,23 @@ power twoproportions 0.123 0.3 n(1000) alpha(0.05) // Solves for power
 // Hypothesis Test
 
 // Two sample z-test for proportions (H0: Proportion1 = Proportion2)
-// Produces proportions of each group, Δproportion, SE, z-statistic, p(observing z-statistic greater than z), 95% CI
+// Produces proportions of each group, Δproportion, SE, z-statistic, p(observing Z-statistic greater specific value or test statistic z) AKA Pr(Z > z), 95% CI
 prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are number of succeses in each sample
 
-// Two sample z-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
-// Produces p-values of one-tailed alternative hypothesis in both directions and two-tailed alternative hypothesis. For example, Pr(T < t) is the probability that the t-statistic would be smaller than the Test statistic under the null hypothesis
+// Two sample t-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
+// Produces p-values of one-tailed alternative hypotheses in both directions and two-tailed alternative hypothesis (absolute p-value)
+// In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis
+// In a right-tailed Ha (Δmean > 0 e.g. increases BP), Pr(T > t) is the one-tailed probability that the t-statistic is bigger than specific value t (Test statistic) under the null hypothesis (IT DEPENDS ON THE ALTERNATIVE HYPOTHESIS)
+// Pr(|T| < |t|) is the two-tailed probability that the test-statistic is smaller than specific value t undner H0; Data has to be in either the extreme left or extreme right under the null hypothesis, which each equal half of Pr(|T| < t)
+// Produces mean difference, SE, SD, 95% CI, t-value (also mean/SE), DoF (no. of paired observations - 1)
 ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated by VARIABLE2 are compared
+
+// In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
 
 // Linear Regression and Correlation Matrices
 
 // Linear Regression
-// Produces anaylsis-of-variance table: coefficients (effect of independent variable on dependent variable); standard errors; t-values (whether each coefficient is statistically different from 0); p-values (statistical significance of results); R-squared (proportion of variance in the dependent variable explained by the independent variables; F-statistic (whether model as a whole is statistically significant
+// Produces anaylsis-of-variance table: coefficients (effect of independent variable on dependent variable); SEs; t-values (whether each coefficient is statistically different from 0); p-values (statistical significance of results); R-squared (proportion of variance in the dependent variable explained by the independent variables; F-statistic (whether model as a whole is statistically significant
 regress VARIABLE1 VARIABLE2 ... VARIABLE(n) // where VARIABLE1 is the dependent variable and VARIABLE2-n are the independent variables
 
 // Postestimation (after a linear regression)
