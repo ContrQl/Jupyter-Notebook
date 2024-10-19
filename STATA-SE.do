@@ -77,7 +77,7 @@ prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are n
 
 // Two sample t-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
 // Produces p-values of one-tailed alternative hypotheses in both directions and two-tailed alternative hypothesis (absolute p-value)
-// In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis
+// In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis (referring to sampling distribution of mean difference, where average mean diff = 0, negative towards the left and  positive toward the right)
 // In a right-tailed Ha (Δmean > 0 e.g. increases BP), Pr(T > t) is the one-tailed probability that the t-statistic is bigger than specific value t (Test statistic) under the null hypothesis (IT DEPENDS ON THE ALTERNATIVE HYPOTHESIS)
 // Pr(|T| < |t|) is the two-tailed probability that the test-statistic is smaller than specific value t undner H0; Data has to be in either the extreme left or extreme right under the null hypothesis, which each equal half of Pr(|T| < t)
 // Produces mean difference, SE, SD, 95% CI, t-value (also mean/SE), DoF (no. of paired observations - 1)
