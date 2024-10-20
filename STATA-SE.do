@@ -83,14 +83,18 @@ prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are n
 // Produces mean difference, SE, SD, 95% CI, t-value (also mean/SE), DoF (no. of paired observations - 1)
 ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated by VARIABLE2 are compared
 
+// Mann Whitney U or Wilcoxon Rank Sum Test (Non-parametric Test of Independent Continuous Variables)
+// Produces rank sum values, expected rank sum values, variance adjustment (account for tied ranks), z-statistic, P-value or Prob > |z| or the chance of observing z-value as high as this under the null hypothesis
+ranksum VARIABLE1, by(VARIABLE2) // H0: difference in VARIABLE1 between VARIABLE2 = 0; Performed on ranked data rather than data itself
+
 // In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
 
-// Wilcoxon Signed Rank Test (non-parametric test for paired variables)
+// Wilcoxon Signed Rank Test (Non-parametric Test for Paired Variables)
 signrank VARIABLE = 0 // H0: Median of VARIABLE = 0 or that mean difference = 0 (median of mean difference will be zero if there is no difference)
 signrank VARIABLEbef = VARIABLEaft // Tests if the two paired variables are different
 centile VARIABLE, centile(50) // 95% CI for centile difference since we are using a non-parametric test (as opposed to "ci" for mean difference. 95% CI exclude 0: Reject H0
 
-// Chi-square Test, Fisher's Exact Test (or Test of independence between categorical variables using proportions)
+// Chi-square Test, Fisher's Exact Test (or Non-parametric Test of Independence between Categorical Variables using Proportions)
 tab VARIABLE1 VARIABLE2, expected // Generates contingency table
 tab VARIABLE1 VARIABLE2, chi2 // Chi-square test is used if all expected frequencies are 5 or greater; Chi-Square Statistic: How much the observed frequencies deviate from expected frequencies were the variable independent (Big X^2: Farther from independence); P-value < 0.05: statistically significant association, reject H0 of independence
 tab VARIABLE1 VARIABLE2, exact // Fisher's Exact Test is used if any of the expected frequencies are <5; Variables are significantly different if the variables are not independent (statistically, not causally)
