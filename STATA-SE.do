@@ -88,7 +88,7 @@ ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated b
 // Wilcoxon Signed Rank Test (non-parametric test for paired variables)
 signrank VARIABLE = 0 // H0: Median of VARIABLE = 0 or that mean difference = 0 (median of mean difference will be zero if there is no difference)
 signrank VARIABLEbef = VARIABLEaft // Tests if the two paired variables are different
-centile VARIABLE, centile(50) // 95% CI for centile difference since we are using a non-parametric test (as opposed to "ci" for mean difference
+centile VARIABLE, centile(50) // 95% CI for centile difference since we are using a non-parametric test (as opposed to "ci" for mean difference. 95% CI exclude 0: Reject H0
 
 // Chi-square Test, Fisher's Exact Test (or Test of independence between categorical variables using proportions)
 tab VARIABLE1 VARIABLE2, expected // Generates contingency table
