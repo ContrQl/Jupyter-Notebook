@@ -85,6 +85,8 @@ ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated b
 
 // In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
 
+// Chi-square Test, Fisher's Exact Text
+
 // Linear Regression and Correlation Matrices
 
 // Linear Regression
