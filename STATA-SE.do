@@ -77,7 +77,7 @@ prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are n
 
 // Two sample t-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
 // Produces p-values of one-tailed alternative hypotheses in both directions and two-tailed alternative hypothesis (absolute p-value)
-// In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis (referring to sampling distribution of mean difference, where average mean diff = 0, negative towards the left and  positive toward the right)
+// In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis (referring to sampling distribution of mean difference, where average mean diff = 0, negative towards the left and positive toward the right)
 // In a right-tailed Ha (Δmean > 0 e.g. increases BP), Pr(T > t) is the one-tailed probability that the t-statistic is bigger than specific value t (Test statistic) under the null hypothesis (IT DEPENDS ON THE ALTERNATIVE HYPOTHESIS)
 // Pr(|T| < |t|) is the two-tailed probability that the test-statistic is smaller than specific value t undner H0; Data has to be in either the extreme left or extreme right under the null hypothesis, which each equal half of Pr(|T| < t)
 // Produces mean difference, SE, SD, 95% CI, t-value (also mean/SE), DoF (no. of paired observations - 1)
@@ -85,7 +85,14 @@ ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated b
 
 // In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
 
-// Chi-square Test, Fisher's Exact Text
+// Wilcoxon Signed Rank Test (non-parametric test for paired variables)
+signrank VARIABLE = 0 // H0: Median of VARIABLE = 0 or that mean difference = 0 (median of mean difference will be zero if there is no difference)
+signrank VARIABLEbef = VARIABLEaft // Tests if the two paired variables are different
+
+// Chi-square Test, Fisher's Exact Test (or Test of independence between categorical variables using proportions)
+tab VARIABLE1 VARIABLE2, expected // Generates contingency table
+tab VARIABLE1 VARIABLE2, chi2 // Chi-square test is used if all expected frequencies are 5 or greater; Chi-Square Statistic: How much the observed frequencies deviate from expected frequencies were the variable independent (Big X^2: Farther from independence); P-value < 0.05: statistically significant association, reject H0 of independence
+tab VARIABLE1 VARIABLE2, exact // Fisher's Exact Test is used if any of the expected frequencies are <5; Variables are significantly different if the variables are not independent (statistically, not causally)
 
 // Linear Regression and Correlation Matrices
 
