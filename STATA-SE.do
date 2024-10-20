@@ -121,7 +121,7 @@ correlate VARIABLE1 VARIABLE2 VARIABLE3 [aweight=VARIABLE4], covariance // where
 // Histogram with number of bins specified (14 bins by default), with a specific start bin, and checked for normality
 // Second option to check for normality using q-q plot
 // By default y-axis is density; Switch to frequency by appending "freq" as an argument
-hist VARIABLE, bin(n), start(VALUE) normal freq // Look for bell-shape
+hist VARIABLE, bin(n), start(VALUE) normal // Look for bell-shape
 qnorm VARIABLE // Data normal if points fall near straight line
 
 // Scatter Plot
