@@ -40,4 +40,5 @@ ranksum VARIABLE1, by(VARIABLE2) // H0: difference in VARIABLE1 between VARIABLE
 
 // In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
 
-
+// Kruskal-Wallis ANOVA (Non-parametric Test for > 2 Variables)
+kwallis // TO-DO
