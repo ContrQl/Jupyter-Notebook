@@ -69,7 +69,7 @@ power twoproportions 0.123 0.3 n(1000) alpha(0.05) // Solves for power
 // Two sample z-test for proportions (H0: Proportion1 = Proportion2)
 // Produces proportions of each group, Δproportion, SE, z-statistic, p(observing Z-statistic greater specific value or test statistic z) AKA Pr(Z > z), 95% CI
 prtest OUTCOME, by(GROUP) // Testing for difference in success rate between groups (provided with raw data)
-prtesti TOTAL1 SUCESSS1 TOTAL2 SUCCESS2 // immediate t-test where you already know the number of success and failures in each group (without raw data)
+prtesti TOTAL1 SUCESSS1 TOTAL2 SUCCESS2, count // immediate t-test where you already know the number of successes in each group (without raw data, or tabulated using tab VARIABLE1, VARIABLE2)
 
 // Two sample t-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
 // Produces p-values of one-tailed alternative hypotheses in both directions and two-tailed alternative hypothesis (absolute p-value)
