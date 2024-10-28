@@ -37,7 +37,7 @@ drop VARIABLE2
 drop if VARIABLE2<n // Conditional deletion of specific outliers in variable
 
 // Compute numbers
-disp VARIABLE * arbitrary calculation
+di VARIABLE * arbitrary calculation
 
 // Descriptive Statistics
 
