@@ -72,7 +72,7 @@ power twoproportions 0.123 0.3 n(1000) alpha(0.05) // Solves for power
 prtest OUTCOME, by(GROUP) // Testing for difference in success rate between groups (provided with raw data)
 prtesti TOTAL1 SUCESSS1 TOTAL2 SUCCESS2, count // immediate t-test where you already know the number of successes in each group (without raw data, or tabulated using tab VARIABLE1, VARIABLE2)
 
-// Two sample t-test (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
+// Two sample t-test for continuous data (mean comparison test) in cases of either equal or unequal variances (H0: Mean1 = Mean2)
 // Produces p-values of one-tailed alternative hypotheses in both directions and two-tailed alternative hypothesis (absolute p-value)
 // In a left-tailed Ha (Δmean < 0 e.g. lowers BP), Pr(T < t) is the one-tailed probability that the t-statistic is smaller than specific value t (Test statistic) under the null hypothesis (referring to sampling distribution of mean difference, where average mean diff = 0, negative towards the left and positive toward the right)
 // In a right-tailed Ha (Δmean > 0 e.g. increases BP), Pr(T > t) is the one-tailed probability that the t-statistic is bigger than specific value t (Test statistic) under the null hypothesis (IT DEPENDS ON THE ALTERNATIVE HYPOTHESIS)
