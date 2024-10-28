@@ -34,6 +34,7 @@ codebook VARIABLE
 gen VARIABLE2 = VARIABLE1 * arbitrary transformation
 label variable VARIABLE2 "arbitrary description here"
 drop VARIABLE2
+drop if VARIABLE2<n // Conditional deletion of specific outliers in variable
 
 // Compute numbers
 disp VARIABLE * arbitrary calculation
