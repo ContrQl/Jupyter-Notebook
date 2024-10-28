@@ -81,8 +81,8 @@ prtest VARIABLE1 == VARIABLE2, count(COUNT1, COUNT2) // where COUNT1 and 2 are n
 // In a right-tailed Ha (Δmean > 0 e.g. increases BP), Pr(T > t) is the one-tailed probability that the t-statistic is bigger than specific value t (Test statistic) under the null hypothesis (IT DEPENDS ON THE ALTERNATIVE HYPOTHESIS)
 // Pr(|T| < |t|) is the two-tailed probability that the test-statistic is smaller than specific value t undner H0; Data has to be in either the extreme left or extreme right under the null hypothesis, which each equal half of Pr(|T| < t)
 // Produces mean difference, SE, SD, 95% CI, t-value (also mean/SE), DoF (no. of paired observations - 1)
-ttest VARIABLE1 == VARIABLE2
-ttest VARIABLE1, by(VARIABLE2) // where the mean VARIABLE1 of groups separated by VARIABLE2 are compared
+ttest VARIABLE_BEFORE == VARIABLE_AFTER // Paired (dependent data)
+ttest VARIABLE1, by(VARIABLE2) // Unpaired (independent data), where the mean VARIABLE1 of groups separated by VARIABLE2 are compared
 
 // Mann Whitney U or Wilcoxon Rank Sum Test (Non-parametric Test of Independent Continuous Variables)
 // Produces rank sum values, expected rank sum values, variance adjustment (account for tied ranks), z-statistic, P-value or Prob > |z| or the chance of observing z-value as high as this under the null hypothesis
