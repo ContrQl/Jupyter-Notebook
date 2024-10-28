@@ -41,6 +41,9 @@ gen VARIABLE = .
 replace VARIABLE = 0 if VARIABLE2 < cutoff // Values in low group become 0
 replace VARIABLE = 1 if VARIABLE2 >= cutoff & VARIABLE2 !=. // Values in high group and non-missing values become 1
 
+// Recode data (into multiple groups)
+recode VARIABLE_ORIGINAL (0=0) (n1/n2=1) (n3/n4=2) (n5/max=3), gen(VARIABLE_NEW) // Generates 4 categories with n/n representing the range n to n in a new variable
+
 // Compute numbers
 di VARIABLE * arbitrary calculation
 
