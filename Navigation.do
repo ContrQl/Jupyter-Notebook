@@ -36,6 +36,11 @@ label variable VARIABLE2 "arbitrary description here"
 drop VARIABLE2
 drop if VARIABLE2<n // Conditional deletion of specific outliers in variable
 
+// Dichotomise data (stratification)
+gen VARIABLE = .
+replace VARIABLE = 0 if VARIABLE2 < cutoff // Values in low group become 0
+replace VARIABLE = 1 if VARIABLE2 >= cutoff & VARIABLE2 !=. // Values in high group and non-missing values become 1
+
 // Compute numbers
 di VARIABLE * arbitrary calculation
 
