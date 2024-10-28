@@ -29,7 +29,7 @@ ttest VARIABLE_DIFFERENCE == 0
 // Wilcoxon Signed Rank Test (Non-parametric Test for Paired Variables)
 signrank VARIABLE = 0 // H0: Median of VARIABLE = 0 or that mean difference = 0 (median of mean difference will be zero if there is no difference)
 signrank VARIABLEbef = VARIABLEaft // Tests if the two paired variables are different
-centile VARIABLE, centile(50) // 95% CI for centile difference since we are using a non-parametric test (as opposed to "ci" for mean difference. 95% CI exclude 0: Reject H0
+centile VARIABLE, centile(50) // 95% CI for centile difference since we are using a non-parametric test (as opposed to "ci" for mean difference. 95% CI is narrow and exclude 0: Reject H0
 
 // Unpaired Two sample t-test (Parametric Test of Independent Continuous Variables)
 ttest VARIABLE1, by(VARIABLE2) // The mean VARIABLE1 of groups separated by VARIABLE2 are compared
