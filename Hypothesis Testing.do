@@ -14,7 +14,7 @@ tab VARIABLE1 VARIABLE2, expected // Generates contingency table
 tab VARIABLE1 VARIABLE2, chi2 // Chi-square test is used if all expected frequencies are 5 or greater; Chi-Square Statistic: How much the observed frequencies deviate from expected frequencies were the variable independent (Big X^2: Farther from independence); P-value < 0.05: statistically significant association, reject H0 of independence
 tab VARIABLE1 VARIABLE2, exact // Fisher's Exact Test is used if any of the expected frequencies are <5; Variables are significantly different if the variables are not independent (statistically, not causally)
 
-// Tests for Continuous Data
+// Tests for Continuous or Discrete Data
 
 // Two sample t-test (Parametric Test for Paired Variables)
 // Tests for differences in mean in cases of either equal or unequal variances (H0: Mean1 = Mean2)
@@ -39,3 +39,5 @@ ttest VARIABLE1, by(VARIABLE2) // The mean VARIABLE1 of groups separated by VARI
 ranksum VARIABLE1, by(VARIABLE2) // H0: difference in VARIABLE1 between VARIABLE2 = 0; Performed on ranked data rather than data itself
 
 // In cases when output gives alpha or significance level. In a one-tailed hypothesis, alpha = alpha; In a two-tailed hypothesis, each tail = alpha/2. In both cases, complement of the significance level = 1-alpha
+
+
