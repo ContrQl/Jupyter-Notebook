@@ -13,10 +13,10 @@ webuse FILENAME.dta
 br or browse
 
 // One-way table showing frequency distribution of VARIABLE
-tabulate VARIABLE
+tab VARIABLE
 
 // Two-way table showing summarising relationships between two categorical variables, where VARIABLE1 is shown in row and VARIABLE2 is shown in column, and row shows within-row relative frequencies in %
-tabulate VARIABLE1 VARIABLE2, row
+tab VARIABLE1 VARIABLE2, row
 
 // Reveal structure and properties of dataset (a la schema in SQL)
 // Each variable has a variable name, storage type (a la C++ int cents), display format, value label (key-value pair that stores numerical values but displays text), variable lable (which is a description of the variable e.g units)
