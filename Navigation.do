@@ -68,9 +68,4 @@ br if missing(VARIABLE)
 list VARIABLE if > n
 by VARIABLE2, sort: summ VARIABLE1 // where subgroups are separated by VARIABLE1 and summary produced for VARIABLE2
 
-// Power Analysis (Solving for n)
-// Sample size needed to achieve 0.80 power for detecting a difference between two proportions (0.123, 0.8)
-power twoproportions 0.123 0.3, power(0.8) alpha(0.05)
-power twoproportions 0.123 0.3 n(1000) alpha(0.05) // Solves for power
-
 // To keep track of work, use the log button (lab notebook icon) to begin a log
