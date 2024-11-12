@@ -12,19 +12,12 @@ predict VARIABLE, stdp // put into new variable the standard errors of the predi
 // Also: Test for heteroskedasticity (estat hettest); Plot residuals versus fitted values (rvfplot); Test for joint significance (test VAIRABLE1 VARIABLE2); Get VIF to check for multicollinearity (estat vif); Plot leverage vs residuals to check for outliers (lvr2plot)
 
 // Estimate Correlation Matrix
-// +/- = positive/negative correlation
+// Pearson Correlation or Product Moment Correlation
 correlate VARIABLE1 VARIABLE2 VARIABLE ... (n)
 by VARIABLE3, sort: correlate VARIABLE1 VARIABLE2 ... VARIABLE(n)
 
+// Spearman Correlation or Rank Correlation (Non-parametric; Check assumptions)
+spearman VARIABLE1 VARIABLE2
+
 //  Estimate Covariance Matrix
 correlate VARIABLE1 VARIABLE2 VARIABLE3 [aweight=VARIABLE4], covariance // where VARIABLE4 is used as analytic weight
-
-determine normality before choosing betwen Pearson and Spearman (NP)
-
-Pearson
-//
-Strength of correlation
-
-
-
-Spearman's correlation for ordinal data (by ranks)
