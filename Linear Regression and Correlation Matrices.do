@@ -18,3 +18,13 @@ by VARIABLE3, sort: correlate VARIABLE1 VARIABLE2 ... VARIABLE(n)
 
 //  Estimate Covariance Matrix
 correlate VARIABLE1 VARIABLE2 VARIABLE3 [aweight=VARIABLE4], covariance // where VARIABLE4 is used as analytic weight
+
+determine normality before choosing betwen Pearson and Spearman (NP)
+
+Pearson
+//
+Strength of correlation
+
+
+
+Spearman's correlation for ordinal data (by ranks)
