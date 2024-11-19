@@ -2,9 +2,12 @@
 
 // Multivariable Linear Regression
 // Produces anaylsis-of-variance table: coefficients (effect of independent variable on dependent variable); SEs; t-values (whether each coefficient is statistically different from 0); p-values (statistical significance of results); R-squared (proportion of variance in the dependent variable explained by the independent variables; F-statistic (whether model as a whole is statistically significant
-reg VARIABLE1 VARIABLE2 ... VARIABLE(n) // where VARIABLE1 is the dependent variable and VARIABLE2-n are the independent confounding variables to be controlled. Model: VARIABLE1 = α_2 + β*VARIABLE2 + α_3 + β*VARIABLE3 ... + α_n + β*VARIABLEn
+reg VARIABLE1 VARIABLE2 ... VARIABLE(n) // where VARIABLE1 is the dependent variable and VARIABLE2-n are the independent confounding variables to be controlled. Model: VARIABLE1 = α + β_2*VARIABLE2 + β_3*VARIABLE3 ... + β_n*VARIABLEn
 reg VAIRABLE1 VARIABLE2 // Simple linear regression. Model: VARIABLE1 = α + β*VARIABLE2
-reg VAIRABLE1 i.VARIABLE2 // Logistic regression, where VARIABLE2 is binary. Model: VARIABLE1 = α + β*VARIABLE2
+reg VAIRABLE1 i.VARIABLE2 // Prefix when a predictor is categorical/binary
+
+// Logistic regression, where VARIABLE2 is binary
+
 
 // Postestimation (after a linear regression)
 predict VARIABLEhat, xb // put into new variable the predicted values for the model, where hat is the statistical convention for fitted values
