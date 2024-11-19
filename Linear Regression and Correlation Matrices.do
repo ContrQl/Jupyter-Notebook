@@ -6,9 +6,13 @@ reg DEPENDANT VARIABLE1 ... VARIABLE(n) // where VARIABLE1 is the dependent vari
 reg DEPENDANT VARIABLE1 // Simple linear regression. Model: VARIABLE1 = α + β*VARIABLE2
 reg DEPENDANT i.VARIABLE1 // Prefix when a predictor is categorical/binary
 
+// Key outputs for interpretation: β-coefficient, 95% CI and p-value. β-coefficienct contain 0: predictor has no effect on depandant
+
 // Logistic Regression, where the outcome (VARIABLE1) is binary
 logit DEPENDANT VARIABLE1, OR // Produces β-coefficient and OR
 logistic DEPENDANT VARIABLE1 ... VARIABLEn // Produces OR of each variable
+
+// Key outputs for interpretation: Odds Ratio, 95% CI and p-value. OR CI contain 1: predictor has no effect on dependant
 
 // Postestimation (after a linear regression)
 predict VARIABLEhat, xb // put into new variable the predicted values for the model, where hat is the statistical convention for fitted values
