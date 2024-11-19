@@ -3,6 +3,7 @@
 // Linear Regression
 // Produces anaylsis-of-variance table: coefficients (effect of independent variable on dependent variable); SEs; t-values (whether each coefficient is statistically different from 0); p-values (statistical significance of results); R-squared (proportion of variance in the dependent variable explained by the independent variables; F-statistic (whether model as a whole is statistically significant
 reg VARIABLE1 VARIABLE2 ... VARIABLE(n) // where VARIABLE1 is the dependent variable and VARIABLE2-n are the independent variables
+reg VAIRABLE1 i.VARIABLE2 // where VARIABLE2 is binary
 
 // Postestimation (after a linear regression)
 predict VARIABLEhat, xb // put into new variable the predicted values for the model, where hat is the statistical convention for fitted values
