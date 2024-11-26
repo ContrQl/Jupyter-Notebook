@@ -1,10 +1,4 @@
 
-// Recode data (into multiple groups)
-recode VARIABLE_ORIGINAL (0=0) (n1/n2=1) (n3/n4=2) (n5/max=3), gen(VARIABLE_NEW) // Generates 4 categories with n/n representing the range n to n in a new variable
-
-// Compute numbers
-di VARIABLE * arbitrary calculation
-
 // Descriptive Statistics
 
 // Summarise VARIABLE in detail (VARIABLE IS CASE SENSITIVE)
